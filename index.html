@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Periodic Nonmetal Checker</title>
-<!--Pyscript-->
+
+    <!-- PyScript -->
     <link
         rel="stylesheet"
         href="https://pyscript.net/releases/2025.3.1/core.css"
     >
-
     <script
         type="module"
         src="https://pyscript.net/releases/2025.3.1/core.js"
     ></script>
-<!-- -->
+
+    <!-- Styling -->
     <style>
-        {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -32,14 +33,16 @@
             align-items: center;
             padding: 20px;
             font-family: Arial, sans-serif;
+            background-color: #e8f0e9;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
-            padding: 20px;
+            padding: 25px;
             border-radius: 18px;
             background-color: rgb(250, 242, 242);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .header {
@@ -98,16 +101,19 @@
             background-color: #0b6b2b;
         }
 
-        #result {
+        #output1 {
             min-height: 55px;
             margin-top: 22px;
             padding: 15px;
             border-radius: 8px;
-            text-align: left;
             color: #1e293b;
             background-color: #f1f5f9;
             line-height: 1.8;
             overflow-wrap: anywhere;
+        }
+
+        #output1 p {
+            margin-bottom: 5px;
         }
 
         .footer {
@@ -125,31 +131,27 @@
 
         <header class="header">
             <h1>Nonmetal Symbols</h1>
-            <p>Add The Element Symbol.</p>
+            <p>Enter a nonmetal element symbol to find its information.</p>
         </header>
 
         <div class="form-group">
-            <label for="first_name">Nonmetal Element Symbol</label>
-            <input
-                type="text"
-                id="🧪Enter Nonmetal Element Symbol"
-                placeholder="Eg: O, Ar, He"
-            >
-        </div>
-<!--Result-->
-             <div class="form-group">
-            <label for="first_name">Result</label>
-            <input
-                type="text"
-                id="Symbol"
-            >
-        </div>
+            <label for="element_symbol">
+                Nonmetal Element Symbol
+            </label>
 
+            <input
+                type="text"
+                id="element_symbol"
+                placeholder="e.g., O, Ar, He"
+            >
+        </div>
+<!-- Result Button -->
         <button py-click="add_element">
-            Result Element Symbol
+            Search Element
         </button>
 
         <div id="output1">
+            <p>Element information will appear here.</p>
         </div>
 
         <p class="footer">Official Periodic Table</p>
