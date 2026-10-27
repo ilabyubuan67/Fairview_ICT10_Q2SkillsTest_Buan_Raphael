@@ -21,20 +21,18 @@ nonmetals = {
     "Xe":	("Xenon",	54,	131.29),
     "Rn":	("Radon",   86,  222),
 }
-def add_members(e):
+
+def add_element(e):
     # Gets the value from what they inputted in the textbox
     element_symbol = document.getElementById("element_symbol").value.strip()
-    
-
     element_data = nonmetals.get(element_symbol, ("Not Found", "N/A",))
 
-    element_ = element_data[0]
-    element_name = element_data[1]
-    element_number = element_data[2]
-    atomic_mass = element_data[3]
-
+    element_name = element_data[0]
+    element_number = element_data[1]
+    atomic_mass = element_data[2]
+# Result
     document.getElementById("output1").innerHTML = f"""
-    <p>Element: {element_}</p>
-    <p>Element Name: {element_name}</p>
-    <p>Atomic Number: {element_number}</p>
-    <p>Atomic Mass: {atomic_mass}</p>
+    <p>Element: {element_symbol}</p>
+    <p>Element Name: {element_data[0]}</p>
+    <p>Atomic Number: {element_data[1]}</p>
+    <p>Atomic Mass: {element_data[2]}</p """
